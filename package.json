@@ -1,0 +1,15 @@
+{
+  "name": "sarue",
+  "version": "1.0.0",
+  "description": "App for monitoring remote and local servers",
+  "main": "electron/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "author": "Marcos Paulo and Lucas Bezerra",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^9.1.0"
+  }
+}

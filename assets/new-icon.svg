@@ -1,0 +1,16 @@
+<svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+
+ <g>
+  <title>background</title>
+  <rect fill="none" id="canvas_background" height="402" width="582" y="-1" x="-1"/>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_3" y="3.999976" x="4" width="1" height="16"/>
+  <rect id="svg_4" y="3.999976" x="9" width="1" height="16"/>
+  <path id="svg_5" d="m3,1.999976c-1.1046,0 -2,0.9 -2,2l0,7l0,2l0,7c0,1.1 0.8954,2 2,2l9,0l9,0c1.105,0 2,-0.9 2,-2l0,-7l0,-2l0,-7c0,-1.1 -0.895,-2 -2,-2l-9,0l-9,0z"/>
+  <path id="svg_6" fill="#f14666" d="m2.889099,2.05545c-1.1046,0 -2,0.8954 -2,2l0,3l0,3l0,1l0,1l0,1l0,3l0,3c0,1.105 0.8954,2 2,2l9,0l9,0c1.105,0 2,-0.895 2,-2l0,-3l0,-4l0,-2l0,-3l0,-3c0,-1.1046 -0.895,-2 -2,-2l-9,0l-9,0z"/>
+  <path id="svg_7" fill="#ecf0f1" d="m10,4.999976l-2.5625,6l-5.4375,0l0,1l6,0l0.2812,0l1.7188,-4l1.281,3l3,7l2.563,-6l5.156,0l0,-1l-4.719,0l-1.281,0l-1.719,4l-1.719,-4l-2.562,-6z"/>
+  <text stroke="null" transform="matrix(0.5314851956029791,0,0,0.5517884308706076,8.738994632241331,4.440951999225491) " xml:space="preserve" text-anchor="start" font-family="Helvetica, Arial, sans-serif" font-size="7" id="svg_8" y="8.064944" x="6.542309" stroke-opacity="null" stroke-width="0" fill="#ffffff">Saruê</text>
+ </g>
+</svg>
