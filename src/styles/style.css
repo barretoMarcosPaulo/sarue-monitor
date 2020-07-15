@@ -69,18 +69,17 @@ body{
     display: flex;
     flex-direction: column;
     max-height: 100vh;
-    /* align-items: center; */
     margin-top: 5%;
 }
 
 .list-files .item{
-    font-size: 17px;
-    padding: 5px;
-    border-bottom: 1px solid gray;
+    font-size: 15px;
     cursor: pointer;
+    padding: 8px;   
 }
 .list-files .item label,i{
     font-weight: bold;
+    cursor: pointer;
 }
 
 
