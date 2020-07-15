@@ -16,6 +16,7 @@
     
     <div class="content">
         
+        <!-- File Box -->
         <div class="files box border-right-box" id="file-box">
             <div class="header-files bg-gray">
                 <p>Arquivos</p>
@@ -47,70 +48,68 @@
             </div>
         </div>
         
-        <div class="process box border-right-box" id="process-box">
+        <!-- Process Box -->
+        <div class="process process-box border-right-box" id="process-box">
             <div class="header-process" dis>
                 <h2>Processos em Execução</h1>
                 
-                <!-- Files -->
-                <div style="display: flex; flex-direction: column; padding-left: 10px; align-items: center; margin-top: 2%;">
+                <!-- Chart -->
+                <div id="group-use-chart">
 
-
-                        <div class="disponivel" style="font-size: 13px; display: flex; margin-top: 3%;">
-                            <div style="display: flex; font-weight: bold; margin-right: 20px;">
-                                <div class="circle" style="width: 15px; height: 15px; background-color: #FFC154; border-radius: 50%;"></div>
-                                <label style="margin-left: 10px;"> Mémoria(3.7GB / 16BG)</label>
+                        <div class="using-and-free">
+                            <div style="margin-right: 20px;">
+                                <div class="circle" style="background-color: #FFC154;"></div>
+                                <label class="label-circle"> Mémoria(3.7GB / 16BG)</label>
                             </div>
                             
-                            
 
-                            <div style="display: flex; font-weight: bold;">
-                                <div class="circle" style="width: 15px; height: 15px; background-color: #47B39C; border-radius: 50%;"></div>
-                                <label style="margin-left: 10px;"> Disco(37GB / 160BG)</label>
+                            <div>
+                                <div class="circle" style="background-color: #47B39C;"></div>
+                                <label class="label-circle"> Disco(37GB / 160BG)</label>
                             </div>
 
                         </div>
                         
-                        <div class="container" style="width: 350px; margin-top: 2%;">
+                        <div class="container chart-total-use">
                             <canvas id="chart"></canvas>
                         </div>
 
-                        
-
                 </div>
+
                 <br>
 
-                <!-- Process -->
+                <!-- Table Process -->
                 <div style="padding-left: 10px">
                     <h4>Executanto Agora</h4>
-                    <table style="width: 100%; margin-top: 2%; font-size: 13px;">
+                    <table class="table">
                         <tr class="bg-gray">
-                            <th style=" padding: 5px ;border-radius: 5px 0 0 5px ;">Usuário</th>
-                            <th style="padding: 5px">Processo</th>
-                            <th style="padding: 5px">CPU(%)</th>
-                            <th style="padding: 5px; border-radius: 0 5px 5px 0 ;">Mem(%)</th>
+                            <th class="radius-left">Usuário</th>
+                            <th>Processo</th>
+                            <th>CPU(%)</th>
+                            <th class="radius-right">Mem(%)</th>
                         </tr>
-                        <tr style="text-align: center">
+                        <tr class="tr-process">
                             <td>Dev</td>
                             <td>VSCOD</td>
                             <td>0.04</td>
                             <td>1.01</td>
                         </tr>
 
-                        <tr style="text-align: center">
+                        <tr class="tr-process">
                             <td>root</td>
                             <td>Sublime Text versão</td>
                             <td>0.04</td>
                             <td>1.01</td>
                         </tr>
 
-                        <tr style="text-align: center">
+                        <tr class="tr-process">
                             <td>Dev</td>
                             <td>VSCOD</td>
                             <td>0.04</td>
                             <td>1.01</td>
                         </tr>
                         
-                        <tr style="text-align: center">
+                        <tr class="tr-process">
                             <td>root</td>
                             <td>Sublime Text versão</td>
                             <td>0.04</td>

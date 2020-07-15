@@ -63,10 +63,6 @@ body{
     cursor: pointer;
 }
 
-/* .list-files::-webkit-scrollbar-thumb {
-  background: c; 
-  border-radius: 5px;
-} */
 
 .list-files{
     overflow: auto;
@@ -88,12 +84,62 @@ body{
 }
 
 
-/* Process */
-.header-process{
-    /* border: solid 1px red; */
-}
-
 .header-process h2{
     margin-top: 10px;
     margin-left: 10px;
+}
+
+
+/* BOX PROCESS */
+.process-box #group-use-chart{
+    display: flex; 
+    flex-direction: column; 
+    padding-left: 10px; 
+    align-items: center; 
+    margin-top: 2%;
+}
+
+.process-box .using-and-free{
+    font-size: 13px; 
+    display: flex; 
+    margin-top: 3%;
+}
+
+.process-box .using-and-free div{
+    display: flex; 
+    font-weight: bold;
+}
+.circle{
+    width: 15px; 
+    height: 15px;
+    border-radius: 50%;
+}
+
+.label-circle{
+    margin-left: 10px;
+}
+
+.chart-total-use{
+    width: 350px; 
+    margin-top: 2%;
+}
+
+.process-box .table{
+    width: 100%; 
+    margin-top: 2%; 
+    font-size: 13px;
+}
+
+.process-box .table th{
+    padding: 5px ;
+}
+
+.process-box .table .radius-left{
+    border-radius: 5px 0 0 5px ;
+}
+.process-box .table .radius-right{
+    border-radius: 0 5px 5px 0 ;
+}
+.process-box .table .tr-process{
+    text-align: center
 }
