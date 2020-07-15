@@ -1,3 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
 body{
     background-color: #222328;
+    color: white;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-gray{
+    background-color: #494849;
+}
+
+/* home */
+.content{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.border-right-box{
+    border-right: solid 1px gray;
+}
+.box{
+    max-height:100vh;
+    min-height:100vh;
+}
+.files{
+    min-width: 25%;
+}
+.process{
+    width: 50%;
+}
+
+
+/* Header Files */
+.header-files{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-files p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.header-files .icons-files{
+    margin-top: 4%;
+}
+.header-files .icons-files i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* .list-files::-webkit-scrollbar-thumb {
+  background: c; 
+  border-radius: 5px;
+} */
+
+.list-files{
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    /* align-items: center; */
+    margin-top: 5%;
+}
+
+.list-files .item{
+    font-size: 17px;
+    padding: 5px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+}
+.list-files .item label,i{
+    font-weight: bold;
 }

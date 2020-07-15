@@ -5,7 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saruê</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="../styles/fontawesome-free-5.13.0/css/all.min.css">
+    <!-- <script>const $ = require('jquery');</script> -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script crossorigin="anonymous" src="../services/jquery/jquery-ui.js"></script>
 </head>
 <body>
+    
+    <div class="content">
+        
+        <div class="files box border-right-box" id="file-box">
+            <div class="header-files bg-gray">
+                <p>Arquivos</p>
+                <div class="icons-files">
+                    <i class="fas fa-upload" title="Upload"></i>
+                    <i class="far fa-file" title="Criar novo arquivo"></i>
+                    <i class="far fa-folder-open" title="Criar nova pasta"></i>
+                    <div style="display: inline; border-left: 1px solid white; padding-left: 10px;">
+                        <i class="fas fa-download" title="Download"></i>
+                        <i class="fas fa-trash-alt" title="Excluir"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-files">
+
+                
+                <div class="item">
+                    <i class="fas fa-folder-open"  style="color: #9b90ff;"></i>
+                    <label>Documentos</label>
+                </div>
+                
+                
+                <div class="item">
+                    <i class="fas fa-file" style="color: #FFE9A2;"></i> 
+                    <label>electron.js</label>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div class="process box border-right-box" id="process-box">
+            
+        </div>
+        
+        <div class="instances box" id="instances-box">
+            
+        </div>
+        
+    </div>
+    
+
+    <script>
+        $(function () {
+            $("#file-box").resizable();
+            $("#process-box").resizable();
+            $("#instances-box").resizable();
+        });
+    </script>
 </body>
 </html>
