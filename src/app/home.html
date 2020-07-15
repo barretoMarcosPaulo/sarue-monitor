@@ -48,11 +48,35 @@
         </div>
         
         <div class="process box border-right-box" id="process-box">
-            <div class="header-process">
+            <div class="header-process" dis>
                 <h2>Processos em Execução</h1>
-                    <div class="container" style="width: 300px; margin: 5% auto">
-                    <canvas id="pieChart"></canvas>
-                </div>
+                
+                    <div style="display: flex; flex-direction: row; margin-top: 4%; padding-left: 10px;">
+
+
+                        <div class="disponivel" style="width: 40%; margin-top: 5%;">
+                            <div style="display: flex; font-weight: bold;">
+                                <div class="circle" style="width: 15px; height: 15px; background-color: #FFC154; border-radius: 50%;"></div>
+                                <label> Mémoria(3.7GB / 16BG)</label>
+                            </div>
+                            
+                            <br>
+
+                            <div style="display: flex; font-weight: bold;">
+                                <div class="circle" style="width: 15px; height: 15px; background-color: #47B39C; border-radius: 50%;"></div>
+                                <label> Disco(37GB / 160BG)</label>
+                            </div>
+
+                        </div>
+                        
+                        <div class="container" style="width: 300px;">
+                            <canvas id="pieChart"></canvas>
+                        </div>
+
+                        <hr>
+
+                    </div>
+
             </div>
         </div>
         
