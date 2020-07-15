@@ -10,6 +10,7 @@
     <!-- <script>const $ = require('jquery');</script> -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script crossorigin="anonymous" src="../services/jquery/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 </head>
 <body>
     
@@ -47,7 +48,12 @@
         </div>
         
         <div class="process box border-right-box" id="process-box">
-            
+            <div class="header-process">
+                <h2>Processos em Execução</h1>
+                    <div class="container" style="width: 300px; margin: 5% auto">
+                    <canvas id="pieChart"></canvas>
+                </div>
+            </div>
         </div>
         
         <div class="instances box" id="instances-box">
@@ -63,6 +69,42 @@
             $("#process-box").resizable();
             $("#instances-box").resizable();
         });
+    </script>
+
+    <script>
+
+    var labels = [
+        "CPU",
+        "Mémoria",
+        "Disco",
+    ];
+    var data = [
+        50,
+        40,
+        40,
+
+    ];
+    var pie = document.getElementById("pieChart").getContext('2d');
+    var myChart = new Chart(pie, {
+        type: 'pie',
+        data: {
+            labels: labels,
+            datasets: [
+                {
+                    data: data,
+                    borderColor: ['#f14666', '#FFC154', '#47B39C'],
+                    backgroundColor: ['#f14666', '#FFC154', '#47B39C'],
+                }
+            ]
+        },
+        options: {
+            title: {
+                display: true,
+                text: "Em uso neste servidor:"
+            }
+        }
+    });
+
     </script>
 </body>
 </html>

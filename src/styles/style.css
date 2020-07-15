@@ -86,3 +86,14 @@ body{
 .list-files .item label,i{
     font-weight: bold;
 }
+
+
+/* Process */
+.header-process{
+    /* border: solid 1px red; */
+}
+
+.header-process h2{
+    margin-top: 10px;
+    margin-left: 10px;
+}
