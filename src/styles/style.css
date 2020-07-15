@@ -14,7 +14,7 @@ a:hover{
 body{
     background-color: #222328;
     color: white;
-    /* overflow: hidden; */
+    overflow: hidden;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -128,11 +128,13 @@ body{
     width: 100%; 
     margin-top: 2%; 
     font-size: 13px;
+
+    /* display: inline-block; */
 }
 
 .process-box .table th{
     padding: 5px ;
-}
+} 
 
 .process-box .table .radius-left{
     border-radius: 5px 0 0 5px ;
@@ -141,5 +143,15 @@ body{
     border-radius: 0 5px 5px 0 ;
 }
 .process-box .table .tr-process{
-    text-align: center
+    text-align: center;
+}
+.process-box .table .tr-process td{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.box-table-overflow{
+    padding-left: 10px; 
+    overflow: auto; 
+    height: 38vh;
 }
