@@ -52,26 +52,26 @@
                 <h2>Processos em Execução</h1>
                 
                 <!-- Files -->
-                <div style="display: flex; flex-direction: row; margin-top: 4%; padding-left: 10px;">
+                <div style="display: flex; flex-direction: column; padding-left: 10px; align-items: center; margin-top: 2%;">
 
 
-                        <div class="disponivel" style="width: 40%; margin-top: 9.3%; font-size: 13px;">
-                            <div style="display: flex; font-weight: bold;">
+                        <div class="disponivel" style="font-size: 13px; display: flex; margin-top: 3%;">
+                            <div style="display: flex; font-weight: bold; margin-right: 20px;">
                                 <div class="circle" style="width: 15px; height: 15px; background-color: #FFC154; border-radius: 50%;"></div>
-                                <label> Mémoria(3.7GB / 16BG)</label>
+                                <label style="margin-left: 10px;"> Mémoria(3.7GB / 16BG)</label>
                             </div>
                             
-                            <br>
+                            
 
                             <div style="display: flex; font-weight: bold;">
                                 <div class="circle" style="width: 15px; height: 15px; background-color: #47B39C; border-radius: 50%;"></div>
-                                <label> Disco(37GB / 160BG)</label>
+                                <label style="margin-left: 10px;"> Disco(37GB / 160BG)</label>
                             </div>
 
                         </div>
                         
-                        <div class="container" style="width: 300px;">
-                            <canvas id="pieChart"></canvas>
+                        <div class="container" style="width: 350px; margin-top: 2%;">
+                            <canvas id="chart"></canvas>
                         </div>
 
                         
@@ -138,40 +138,43 @@
         });
     </script>
 
+
     <script>
 
-    var labels = [
-        "CPU",
-        "Mémoria",
-        "Disco",
-    ];
-    var data = [
-        50,
-        40,
-        40,
 
-    ];
-    var pie = document.getElementById("pieChart").getContext('2d');
-    var myChart = new Chart(pie, {
-        type: 'pie',
-        data: {
-            labels: labels,
-            datasets: [
-                {
-                    data: data,
-                    borderColor: ['#f14666', '#FFC154', '#47B39C'],
-                    backgroundColor: ['#f14666', '#FFC154', '#47B39C'],
+        new Chart(document.getElementById("chart"), {
+            type: 'bar',
+            data: {
+                // labels: ["1900", "1950", "1999"],
+                datasets: [
+                    
+                    {
+                        label: "CPU(%)",
+                        backgroundColor: "#f14666",
+                        data: [90]
+                    }, 
+                    
+                    {
+                        label: "Mémoria(%)",
+                        backgroundColor: "#FFC154",
+                        data: [33]
+                    },
+
+                    {
+                        label: "Disco(%)",
+                        backgroundColor: "#47B39C",
+                        data: [45]
+                    },
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Em uso neste servidor:',
+                    position: 'bottom'
                 }
-            ]
-        },
-        options: {
-            title: {
-                display: true,
-                text: "Em uso neste servidor:"
             }
-        }
-    });
-
+        });
     </script>
 </body>
 </html>
