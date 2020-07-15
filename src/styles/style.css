@@ -14,7 +14,7 @@ a:hover{
 body{
     background-color: #222328;
     color: white;
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: 'Roboto', sans-serif;
 }
 
