@@ -159,7 +159,7 @@
         
         <div class="instances box" id="instances-box">
             <h2>
-                Servidores
+                Hosts
             </h1>
 
             <div class="list-server">
@@ -216,13 +216,14 @@
                 </div>
             </div>
 
-            <button type="button" class="button-add-server">
+            <button type="button" class="button-add-server" id="button-add-server" onclick="FormAddInstance()">
                 Novo Servidor
             </button>
         </div>
         
     </div>
     
+    <script src="./renderer.js"></script>
 
     <script>
         $(function () {
@@ -269,6 +270,10 @@
                 }
             }
         });
+    </script>
+
+    <script>
+   
     </script>
 </body>
 </html>
