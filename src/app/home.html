@@ -5,7 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saruê</title>
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/jquery/jquery-ui.css">
+    <link rel="stylesheet" href="../styles/fontawesome-free-5.13.0/css/all.min.css">
+    <!-- <script>const $ = require('jquery');</script> -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script crossorigin="anonymous" src="../services/jquery/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 </head>
 <body>
+    
+    <div class="content">
+        
+        <!-- File Box -->
+        <div class="files box border-right-box" id="file-box">
+            <div class="header-files bg-gray">
+                <p>Arquivos</p>
+                <div class="icons-files">
+                    <i class="fas fa-upload" title="Upload"></i>
+                    <i class="far fa-file" title="Criar novo arquivo"></i>
+                    <i class="far fa-folder-open" title="Criar nova pasta"></i>
+                    <div style="display: inline; border-left: 1px solid white; padding-left: 10px;">
+                        <i class="fas fa-download" title="Download"></i>
+                        <i class="fas fa-trash-alt" title="Excluir"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-files">
+
+                
+                <div class="item">
+                    <i class="fas fa-folder-open"  style="color: #9b90ff;"></i>
+                    <label>Documentos</label>
+                </div>
+                
+                
+                <div class="item">
+                    <i class="fas fa-file" style="color: #FFE9A2;"></i> 
+                    <label>electron.js</label>
+                </div>
+                
+            </div>
+        </div>
+        
+        <!-- Process Box -->
+        <div class="process process-box border-right-box" id="process-box">
+            <div class="header-process" dis>
+                <h2>Processos em Execução</h1>
+                
+                <!-- Chart -->
+                <div id="group-use-chart">
+
+                        <div class="using-and-free">
+                            <div style="margin-right: 20px;">
+                                <div class="circle" style="background-color: #FFC154;"></div>
+                                <label class="label-circle"> Mémoria(3.7GB / 16BG)</label>
+                            </div>
+                            
+
+                            <div>
+                                <div class="circle" style="background-color: #47B39C;"></div>
+                                <label class="label-circle"> Disco(37GB / 160BG)</label>
+                            </div>
+
+                        </div>
+                        
+                        <div class="container chart-total-use">
+                            <canvas id="chart"></canvas>
+                        </div>
+
+                </div>
+
+                <br>
+
+                <!-- Table Process -->
+                <div class="box-table-overflow">
+                    <h4>Executanto Agora</h4>
+                    <table class="table">
+                        <tr class="bg-gray">
+                            <th class="radius-left">Usuário</th>
+                            <th>Processo</th>
+                            <th>CPU(%)</th>
+                            <th class="radius-right">Mem(%)</th>
+                        </tr>
+                        <tr class="tr-process">
+                            <td>Dev</td>
+                            <td>VSCOD</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão bugada left left</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                        <tr class="tr-process">
+                            <td>Dev</td>
+                            <td>VSCOD</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+                        
+                        <tr class="tr-process">
+                            <td>root</td>
+                            <td>Sublime Text versão</td>
+                            <td>0.04</td>
+                            <td>1.01</td>
+                        </tr>
+
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        
+        <div class="instances box" id="instances-box">
+            <h2>
+                Servidores
+            </h1>
+
+            <div class="list-server">
+                <div class="server-selected">
+                    <i class="fas fa-power-off server-on" class="button-power"></i>
+                    <span> DevCapivara</span>
+                </div>
+
+                <div class="all-server">
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 1</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 2</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 3</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+                    
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 4, muito importante</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+
+
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 1</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+                    
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 2</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+                    
+                    <div class="server-stored">
+                        <i class="fas fa-plug button-power"></i>
+                        <span> Servidor 3</span>
+                        <i class="fas fa-trash-alt btn-del"></i>
+                    </div>
+
+
+                </div>
+            </div>
+
+            <button type="button" class="button-add-server">
+                Novo Servidor
+            </button>
+        </div>
+        
+    </div>
+    
+
+    <script>
+        $(function () {
+            $("#file-box").resizable();
+            $("#process-box").resizable();
+            $("#instances-box").resizable();
+        });
+    </script>
+
+
+    <script>
+
+
+        new Chart(document.getElementById("chart"), {
+            type: 'bar',
+            data: {
+                // labels: ["1900", "1950", "1999"],
+                datasets: [
+                    
+                    {
+                        label: "CPU(%)",
+                        backgroundColor: "#f14666",
+                        data: [90]
+                    }, 
+                    
+                    {
+                        label: "Mémoria(%)",
+                        backgroundColor: "#FFC154",
+                        data: [33]
+                    },
+
+                    {
+                        label: "Disco(%)",
+                        backgroundColor: "#47B39C",
+                        data: [45]
+                    },
+                ]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Em uso neste servidor:',
+                    position: 'bottom'
+                }
+            }
+        });
+    </script>
 </body>
 </html>

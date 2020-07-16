@@ -1,3 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: none;
+}
+
 body{
     background-color: #222328;
+    color: white;
+    overflow: hidden;
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg-gray{
+    background-color: #494849;
+}
+
+/* home */
+.content{
+    display: flex;
+    /* justify-content: center; */
+}
+
+.border-right-box{
+    border-right: solid 1px gray;
+}
+.box{
+    max-height:100vh;
+    min-height:100vh;
+}
+.files{
+    min-width: 25%;
+}
+.process{
+    width: 50%;
+}
+.instances{
+    width: 25%;
+}
+
+
+/* Header Files */
+.header-files{
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.header-files p{
+    font-weight: bold;
+    font-size: 20px;
+}
+.header-files .icons-files{
+    margin-top: 4%;
+}
+.header-files .icons-files i{
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.list-files{
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    max-height: 100vh;
+    margin-top: 5%;
+}
+
+.list-files .item{
+    font-size: 15px;
+    cursor: pointer;
+    padding: 8px;   
+}
+.list-files .item label,i{
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.header-process h2{
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+
+/* BOX PROCESS */
+.process-box #group-use-chart{
+    display: flex; 
+    flex-direction: column; 
+    padding-left: 10px; 
+    align-items: center; 
+    margin-top: 2%;
+}
+
+.process-box .using-and-free{
+    font-size: 13px; 
+    display: flex; 
+    margin-top: 3%;
+}
+
+.process-box .using-and-free div{
+    display: flex; 
+    font-weight: bold;
+}
+.circle{
+    width: 15px; 
+    height: 15px;
+    border-radius: 50%;
+}
+
+.label-circle{
+    margin-left: 10px;
+}
+
+.chart-total-use{
+    width: 350px; 
+    margin-top: 2%;
+}
+
+.process-box .table{
+    width: 100%; 
+    margin-top: 2%; 
+    font-size: 13px;
+
+    /* display: inline-block; */
+}
+
+.process-box .table th{
+    padding: 5px ;
+} 
+
+.process-box .table .radius-left{
+    border-radius: 5px 0 0 5px ;
+}
+.process-box .table .radius-right{
+    border-radius: 0 5px 5px 0 ;
+}
+.process-box .table .tr-process{
+    text-align: center;
+}
+.process-box .table .tr-process td{
+    padding: 5px;
+    cursor: pointer;
+}
+
+.box-table-overflow{
+    padding-left: 10px; 
+    overflow: auto; 
+    height: 38vh;
+}
+
+
+
+
+
+/* Scroll Bar */
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(177, 177, 177);
+  /* border-radius: 10px; */
+}
+
+
+/* Servers */
+
+.instances h2{
+    text-align: center;
+    margin: 10px 0 0 10px;
+}
+.server-selected{
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    padding: 5px;
+    background-color: #494849;
+    /* border-left: 2px solid #6a9c6a; */
+    border-bottom: 2px solid #6a9c6a;
+    font-weight: bold;
+}
+.button-power{
+    cursor: pointer;
+}
+.server-selected span{
+    margin: 0 auto;
+}
+.instances .server-on{
+    color: #6a9c6a;
+}
+.instances .server-of{
+    color: #fa3939;
+}
+
+.all-server{
+    /* border-top: solid 1px gray; */
+    /* border-bottom: solid 1px gray; */
+    min-height: 60vh;
+    max-height: 60vh;
+    overflow: auto;
+    margin-top: 1%;
+}
+.btn-del{
+    color: rgb(224, 224, 81);
+    margin-left: 10px;
+}
+
+.server-stored{
+    display: flex;
+    margin-top: 10%;
+    padding: 5px;
+    font-weight: bold;
+}
+.server-stored span{
+    margin-left: 11px;
+    /* border-right: solid 1px white; */
+    min-width: 75%;
+    max-width: 75%;
+}
+
+.button-power{
+    /* color: rgb(68, 68, 226); */
+}
+
+.button-add-server{
+    border-color: #fa3939;
+    cursor: pointer;
+    background-color: #fa3939;
+    color: white;
+    margin: 18% auto;
+    display: block;
+    width: 80%;
+    height: 8vh;
+    outline: none;
+    font-size: 15px;
 }
