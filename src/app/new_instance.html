@@ -20,5 +20,17 @@
         </form>
     </div>
     <label>Conexão por SSH.</label>
+
+    
+    <script src="./models/HostModel.js"></script>
+    <script src="./controllers/HostController.js"></script>
+
+    <script>
+
+        const newInstance = new Instance("DevCapivara1", "root1", "1www.devcapivara.com.br");
+        const controller = new HostController(newInstance,'senhaSegura');
+
+        controller.create();
+    </script>
 </body>
 </html>

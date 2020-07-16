@@ -12,8 +12,10 @@
   "dependencies": {
     "chart.js": "^2.9.3",
     "electron": "^9.1.0",
+    "electron-store": "^5.2.0",
     "jquery": "^3.5.1",
     "jquery-ui-dist": "^1.12.1",
+    "keytar": "^6.0.1",
     "uninstall": "0.0.0"
   }
 }
