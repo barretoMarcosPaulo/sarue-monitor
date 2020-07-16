@@ -41,6 +41,9 @@ body{
 .process{
     width: 50%;
 }
+.instances{
+    width: 25%;
+}
 
 
 /* Header Files */
@@ -174,4 +177,77 @@ body{
 ::-webkit-scrollbar-thumb {
   background: rgb(177, 177, 177);
   /* border-radius: 10px; */
+}
+
+
+/* Servers */
+
+.instances h2{
+    text-align: center;
+    margin: 10px 0 0 10px;
+}
+.server-selected{
+    display: flex;
+    align-items: center;
+    margin-top: 10%;
+    padding: 5px;
+    background-color: #494849;
+    /* border-left: 2px solid #6a9c6a; */
+    border-bottom: 2px solid #6a9c6a;
+    font-weight: bold;
+}
+.button-power{
+    cursor: pointer;
+}
+.server-selected span{
+    margin: 0 auto;
+}
+.instances .server-on{
+    color: #6a9c6a;
+}
+.instances .server-of{
+    color: #fa3939;
+}
+
+.all-server{
+    /* border-top: solid 1px gray; */
+    /* border-bottom: solid 1px gray; */
+    min-height: 60vh;
+    max-height: 60vh;
+    overflow: auto;
+    margin-top: 1%;
+}
+.btn-del{
+    color: rgb(224, 224, 81);
+    margin-left: 10px;
+}
+
+.server-stored{
+    display: flex;
+    margin-top: 10%;
+    padding: 5px;
+    font-weight: bold;
+}
+.server-stored span{
+    margin-left: 11px;
+    /* border-right: solid 1px white; */
+    min-width: 75%;
+    max-width: 75%;
+}
+
+.button-power{
+    /* color: rgb(68, 68, 226); */
+}
+
+.button-add-server{
+    border-color: #fa3939;
+    cursor: pointer;
+    background-color: #fa3939;
+    color: white;
+    margin: 18% auto;
+    display: block;
+    width: 80%;
+    height: 8vh;
+    outline: none;
+    font-size: 15px;
 }
