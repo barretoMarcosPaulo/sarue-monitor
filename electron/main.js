@@ -1,7 +1,7 @@
 const { app } = require('electron');
 const { BrowserWindow } = require('electron');
 const { ipcMain } = require('electron');
-
+// const keytar = require('keytar');
 
 // Main Window
 app.on('ready' , function(){
@@ -11,7 +11,7 @@ app.on('ready' , function(){
         height:500,
         resizable:false,
         webPreferences:{
-            nodeIntegration:true
+            nodeIntegration:true,
         },
         icon: __dirname + "/../assets/new-icon.png",
         backgroundColor:"black"
@@ -29,7 +29,8 @@ ipcMain.on('window-form-instance', () => {
             height: 250,
             alwaysOnTop: true,
             webPreferences: {
-                nodeIntegration: true
+                nodeIntegration: true,
+                enableRemoteModule: true
             },
             resizable: false,
             icon: __dirname + "/../assets/new-icon.png",
@@ -45,3 +46,9 @@ ipcMain.on('window-form-instance', () => {
 ipcMain.on('close-form-new-instance', () => {
     FormNewinstanceWindow.close()
 })
+
+// ipcMain.on('set-safe-password', (event, user, password) => {
+//     const PROCESS_NAME = "sarue-monitor"; 
+//     keytar.setPassword(PROCESS_NAME, user, password);
+    
+// })
