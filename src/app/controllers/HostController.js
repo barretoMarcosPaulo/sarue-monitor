@@ -1,6 +1,7 @@
+const { ipcRenderer } = require('electron');
 const electronStore = require('electron-store');
 const store = new electronStore();
-
+const keytar = require('keytar');
 
 class HostController{
 
@@ -10,12 +11,17 @@ class HostController{
     }
     
     save(){
-        if ( !store.get(this._host.name) ){
-            store.set(this._host.name, this._host);
-            return this._host;
+
+        if (!store.get('storage-hosts') ){
+            const hosts_storage = new Array();
+            store.set('storage-hosts', hosts_storage);
         }else{
-            return false;
+            const hosts = store.get('storage-hosts');
+            hosts.push(this._host);
+            store.set('storage-hosts', hosts);
+            
         }
+
     }
 
     delete(){
@@ -25,5 +31,10 @@ class HostController{
     testeConnection(){
         console.log("testando")
     }
+
+    getAllHosts(){
+        return store.get('storage-hosts');
+    }
+
 
 }

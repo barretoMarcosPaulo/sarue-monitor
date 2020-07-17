@@ -1,5 +1,5 @@
 
-class Instance{
+class Host{
     constructor(name,username,address){
         this.name = name;
         this._username = username;
