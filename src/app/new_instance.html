@@ -10,33 +10,27 @@
     <div id="form-box">
         <img src="../../assets/logo-redonda.png">
         <form>
-            <input type="text" placeholder="Usuário" class="min-input" id="username">
-            <input type="text" placeholder="IP ou Domínio" class="min-input" id="host">
+            <input type="text" placeholder="Usuário" class="min-input field" id="username">
+            <input type="text" placeholder="IP ou Domínio" class="min-input field" id="host">
             <br>
-            <input type="text" placeholder="Um nome para esta máquina" class="max-input" id="name">
+            <input type="text" placeholder="Um nome para esta máquina" class="max-input field" id="name">
             <br>
-            <input type="password" placeholder="Senha do usuário informado" class="max-input" id="password">
+            <input type="password" placeholder="Senha do usuário informado" class="max-input field" id="password">
             <button type="button" id="btn-add">Adicionar</button>
         </form>
     </div>
     <label>Conexão por SSH.</label>
 
-    
-    <script src="./models/HostModel.js"></script>
-    <script src="./controllers/HostController.js"></script>
+    <script src="./models/HostModel.js"></script>    
 
     <script>
 
         document.querySelector('#btn-add').addEventListener('click',()=>{
-            const username = document.querySelector('#username').value;
-            const host = document.querySelector('#host').value;
-            const name = document.querySelector('#name').value;
-            const password = document.querySelector('#password').value;
-            
-            const newInstance = new Host(name, username, host);
-            const controller = new HostController(newInstance, password);
-            controller.save();
+            const newHost = new HostModel('name' , 'username', 'host', 'password');
+            const hostFunctions = new HostFunctions();
+
         })
+
     </script>
 </body>
 </html>
