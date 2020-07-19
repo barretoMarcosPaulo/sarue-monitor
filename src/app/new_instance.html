@@ -21,16 +21,19 @@
     </div>
     <label>Conexão por SSH.</label>
 
-    <script src="./models/HostModel.js"></script>    
+    <script src="./models/HostModel.js"></script>
+    <!-- <script src="./renderer.js"></script>     -->
 
     <script>
+        const { remote , ipcRenderer } = require('electron');
 
         document.querySelector('#btn-add').addEventListener('click',()=>{
             const newHost = new HostModel('name' , 'username', 'host', 'password');
-            const hostFunctions = new HostFunctions();
-
+            const homeWindow = remote.getGlobal('mainWindow');
+            homeWindow.webContents.send('refresh-hosts-list');
+            ipcRenderer.send('close-form-new-instance');
         })
 
-    </script>
+    </script> 
 </body>
 </html>
