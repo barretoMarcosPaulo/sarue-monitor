@@ -1,12 +1,14 @@
 const { app } = require('electron');
 const { BrowserWindow } = require('electron');
 const { ipcMain } = require('electron');
-// const keytar = require('keytar');
+
+global.mainWindow = null;
+global.FormNewinstanceWindow = null;
 
 // Main Window
 app.on('ready' , function(){
     app.allowRendererProcessReuse = true;
-    const mainWindow = new BrowserWindow({
+    mainWindow = new BrowserWindow({
         width:990,
         height:500,
         resizable:false,
@@ -21,7 +23,6 @@ app.on('ready' , function(){
 
 
 // Form New Instance Window
-let FormNewinstanceWindow = null
 ipcMain.on('window-form-instance', () => {
     if (FormNewinstanceWindow == null) {
         FormNewinstanceWindow = new BrowserWindow({
@@ -46,9 +47,3 @@ ipcMain.on('window-form-instance', () => {
 ipcMain.on('close-form-new-instance', () => {
     FormNewinstanceWindow.close()
 })
-
-// ipcMain.on('set-safe-password', (event, user, password) => {
-//     const PROCESS_NAME = "sarue-monitor"; 
-//     keytar.setPassword(PROCESS_NAME, user, password);
-    
-// })
