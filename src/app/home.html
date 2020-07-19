@@ -169,60 +169,18 @@
                 </div>
 
                 <div class="all-server" id="all-hosts">
-                    <!-- <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 1</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 2</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 3</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 4, muito importante</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-
-
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 1</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 2</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 3</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div> -->
+                    <button id="btn-refresh" style="display: none;">atualizar</button>
 
                 </div>
             </div>
 
-            <button type="button" class="button-add-server" id="button-add-server" onclick="FormAddInstance()">
-                Novo Servidor
+            <button type="button" class="button-add-server" id="button-add-server">
+                Novo Host
             </button>
         </div>
         
     </div>
     
-    <script src="./renderer.js"></script>
 
     <script>
         $(function () {
@@ -236,12 +194,26 @@
     <script src="../services/chart/chart.js"></script>
     <script src="./host-functions/HostFunctions.js"></script>
     <script>
+        const { ipcRenderer } = require('electron');
+
+        document.querySelector('#button-add-server').addEventListener('click',()=>{
+            ipcRenderer.send('window-form-instance');
+        })
+
+
         const hostFunction = new HostFunctions();
         hostFunction.renderHosts('all-hosts');
+
+        ipcRenderer.on("refresh-hosts-list",()=>{
+            alert("Novo host adicionado com sucesso");
+            hostFunction.renderHosts('all-hosts');
+        })
+
+        
     </script>
 
     <script>
-   
+
     </script>
 </body>
 </html>

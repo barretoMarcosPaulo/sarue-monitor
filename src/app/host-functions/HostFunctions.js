@@ -3,6 +3,7 @@ const store = new electronStore();
 
 class HostFunctions{
     
+
     deleteAll(){
         store.delete('storage-hosts');
     }
