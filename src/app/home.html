@@ -168,9 +168,11 @@
                     <span> DevCapivara</span>
                 </div>
 
-                <div class="all-server" id="all-hosts">
+                <div class="all-server" >
                     <button id="btn-refresh" style="display: none;">atualizar</button>
+                    <div id="all-hosts">
 
+                    </div>
                 </div>
             </div>
 
@@ -206,14 +208,18 @@
 
         ipcRenderer.on("refresh-hosts-list",()=>{
             alert("Novo host adicionado com sucesso");
+            document.getElementById('all-hosts').innerHTML=" ";
             hostFunction.renderHosts('all-hosts');
         })
 
-        
     </script>
 
     <script>
-
+        function removeHost(host){
+            // alert("OI");
+            hostFunction.deleteOne(host.id);
+            document.getElementById(`box-host-${host.id}`).style = "display:none";
+        }
     </script>
 </body>
 </html>
