@@ -1,26 +1,9 @@
-const electronStore = require('electron-store');
-const store = new electronStore();
-
-class HostFunctions{
+class HostView{
     
-
-    deleteAll(){
-        store.delete('storage-hosts');
-    }
-    deleteOne(index){
-        let allHosts = this.getAllHosts();
-        allHosts.splice(index,1);
-        // store.delete('')
-        store.set('storage-hosts', allHosts);
-    }
-
-    getAllHosts(){
-        return store.get('storage-hosts');
-    }
-    renderHosts(id_element_dom){
+    static renderHosts(id_element_dom){
 
         const elementDOM = document.querySelector(`#${id_element_dom}`);
-        const hosts = this.getAllHosts();
+        const hosts = HostFunctions.getAllHosts();
         
         for(let index in hosts){
 
@@ -50,9 +33,5 @@ class HostFunctions{
 
             elementDOM.appendChild(divElement);
         }
-
-        
     }
-
-
 }

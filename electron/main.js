@@ -5,6 +5,7 @@ const { ipcMain } = require('electron');
 global.mainWindow = null;
 global.FormNewinstanceWindow = null;
 
+
 // Main Window
 app.on('ready' , function(){
     app.allowRendererProcessReuse = true;
@@ -43,6 +44,8 @@ ipcMain.on('window-form-instance', () => {
         FormNewinstanceWindow.loadURL(`file://${__dirname}/../src/app/new_instance.html`)
     }
 })
+
+
 
 ipcMain.on('close-form-new-instance', () => {
     FormNewinstanceWindow.close()

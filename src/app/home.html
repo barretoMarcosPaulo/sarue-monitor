@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/jquery/jquery-ui.css">
     <link rel="stylesheet" href="../styles/fontawesome-free-5.13.0/css/all.min.css">
-    <!-- <script>const $ = require('jquery');</script> -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script crossorigin="anonymous" src="../services/jquery/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
@@ -194,7 +193,8 @@
 
 
     <script src="../services/chart/chart.js"></script>
-    <script src="./host-functions/HostFunctions.js"></script>
+    <script src="./controllers/HostController.js"></script>
+    <script src="./views/HostView.js"></script>
     <script>
         const { ipcRenderer } = require('electron');
 
@@ -202,21 +202,18 @@
             ipcRenderer.send('window-form-instance');
         })
 
-
-        const hostFunction = new HostFunctions();
-        hostFunction.renderHosts('all-hosts');
+        HostView.renderHosts('all-hosts');
 
         ipcRenderer.on("refresh-hosts-list",()=>{
             alert("Novo host adicionado com sucesso");
             document.getElementById('all-hosts').innerHTML=" ";
-            hostFunction.renderHosts('all-hosts');
+            HostView.renderHosts('all-hosts');
         })
 
     </script>
 
     <script>
         function removeHost(host){
-            // alert("OI");
             hostFunction.deleteOne(host.id);
             document.getElementById(`box-host-${host.id}`).style = "display:none";
         }

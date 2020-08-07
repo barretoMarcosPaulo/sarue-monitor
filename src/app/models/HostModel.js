@@ -1,6 +1,6 @@
 const electronStore = require('electron-store');
 const store = new electronStore();
-
+const keytar = require('keytar')
 
 class HostModel{
     
@@ -13,9 +13,13 @@ class HostModel{
         this._saveInStorage();
     }
 
+
+
     get infos() {
         return `${this.name},${this._username}, ${this._address}`;
     }
+
+
 
     _saveInStorage() {
 
@@ -38,6 +42,15 @@ class HostModel{
             store.set('storage-hosts', hosts);
 
         }
+
+        this._savePasswordInSO(this._username, this._password);
+    }
+
+
+
+    _savePasswordInSO(account, password){
+        keytar.setPassword('sarue-monitor', account, password);
+        console.log(">>>>>>>>> ", keytar.getPassword('sarue-monitor', account));
     }
 
 }
