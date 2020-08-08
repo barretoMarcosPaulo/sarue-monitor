@@ -50,9 +50,6 @@ class HostModel{
 
     _savePasswordInSO(account, password){
         keytar.setPassword('sarue-monitor', account, password);
-        keytar.getPassword('sarue-monitor', account).then((pass)=>{
-            console.log(">>", pass)
-        })
     }
 
 }

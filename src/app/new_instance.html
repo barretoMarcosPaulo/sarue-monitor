@@ -30,7 +30,7 @@
             const newHost = new HostModel('name' , 'username', 'host', 'password');
             const homeWindow = remote.getGlobal('mainWindow');
             homeWindow.webContents.send('refresh-hosts-list');
-            // ipcRenderer.send('close-form-new-instance');
+            ipcRenderer.send('close-form-new-instance');
         })
 
     </script> 

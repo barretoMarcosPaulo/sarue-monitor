@@ -9,6 +9,7 @@ class HostFunctions{
     }
     static deleteOne(index){
         let allHosts = this.getAllHosts();
+        document.getElementById(`box-host-${index}`).style = "display:none";
         allHosts.splice(index,1);
         store.set('storage-hosts', allHosts);
     }

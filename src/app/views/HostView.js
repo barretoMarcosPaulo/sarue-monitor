@@ -25,7 +25,7 @@ class HostView{
             const iconTrash = document.createElement('i');
             iconTrash.className = "fas fa-trash-alt btn-del";
             iconTrash.id = index;
-            iconTrash.setAttribute('onclick','removeHost(this)');
+            iconTrash.setAttribute('onclick','HostFunctions.deleteOne(this.id)');
 
             divElement.appendChild(iconPower);
             divElement.appendChild(spanElement);
