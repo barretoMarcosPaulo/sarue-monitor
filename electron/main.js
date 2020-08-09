@@ -1,5 +1,5 @@
 const { app } = require('electron');
-const { BrowserWindow } = require('electron');
+const { Menu, BrowserWindow } = require('electron');
 const { ipcMain } = require('electron');
 
 global.mainWindow = null;
@@ -21,7 +21,7 @@ app.on('ready' , function(){
     })
     mainWindow.loadURL(`file://${__dirname}/../src/app/home.html`)
 })
-
+// Menu.setApplicationMenu(false)
 
 // Form New Instance Window
 ipcMain.on('window-form-instance', () => {

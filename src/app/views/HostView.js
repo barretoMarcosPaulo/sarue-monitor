@@ -1,3 +1,5 @@
+const { controllers } = require("chart.js");
+
 class HostView{
     
     static renderHosts(id_element_dom){
@@ -33,5 +35,47 @@ class HostView{
 
             elementDOM.appendChild(divElement);
         }
+    }
+
+    static renderFilesAndDir(content){
+        const elements = content.split('\n');
+
+        let divBoxFiles = document.querySelector('#list-items');
+        divBoxFiles.innerHTML='';        
+        
+        for(let index in elements){
+            if(elements[index]!= ""){
+
+                let divGroupItem = document.createElement('div');
+                divGroupItem.className = "item";
+    
+                let icon = document.createElement('i');
+                
+                let fileExtension = elements[index].split('.');
+                if(fileExtension.length > 1 ){
+                    icon.className = "fas fa-file file-color";
+                }else{
+                    icon.className = "fas fa-folder-open folder-color";
+                    icon.id = `/${elements[index]}`;
+                    icon.setAttribute('onclick', 'connection.nextDir(this.id)');
+                }
+                
+                let textContent = document.createElement('label');
+                textContent.appendChild(document.createTextNode(elements[index]) );
+    
+                divGroupItem.appendChild(icon);
+                divGroupItem.appendChild(textContent);
+                divBoxFiles.appendChild(divGroupItem);
+
+            }
+
+            
+
+        }
+
+    }
+
+    static teste(out){
+        console.log(out);
     }
 }

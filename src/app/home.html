@@ -30,19 +30,8 @@
                 </div>
             </div>
 
-            <div class="list-files">
+            <div class="list-files" id="list-items">
 
-                
-                <div class="item">
-                    <i class="fas fa-folder-open"  style="color: #9b90ff;"></i>
-                    <label>Documentos</label>
-                </div>
-                
-                
-                <div class="item">
-                    <i class="fas fa-file" style="color: #FFE9A2;"></i> 
-                    <label>electron.js</label>
-                </div>
                 
             </div>
         </div>
@@ -195,6 +184,12 @@
     <script src="../services/chart/chart.js"></script>
     <script src="./controllers/HostController.js"></script>
     <script src="./views/HostView.js"></script>
+    <script src="./controllers/SshController.js"></script>
+    
+    <script>
+        const connection = new SshController('168.235.110.16' , 'devcapivara' , 'dev@556637');
+        connection.initMonitor();
+    </script>
     <script>
         const { ipcRenderer } = require('electron');
 

@@ -4,6 +4,14 @@
     margin: 0;
     padding: 0;
 }
+
+.file-color{
+    color: #FFE9A2;
+}
+.folder-color{
+    color: #9b90ff;
+}
+
 a{
     text-decoration: none;
 }
@@ -84,7 +92,9 @@ body{
     font-weight: bold;
     cursor: pointer;
 }
-
+.list-files .item i{
+    margin-right: 10px;
+}
 
 .header-process h2{
     margin-top: 10px;
