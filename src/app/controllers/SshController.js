@@ -41,4 +41,24 @@ class SshController{
         this.commandExec(`ls ${this._currentDir}${path}`,renderFiles);
         this._currentDir += path;
     }
+    backDir(){
+        if(this._currentDir != '~'){
+            let dirBack = this._currentDir.split('/');
+            dirBack.pop();
+            let newDir = "";
+            for(let index in dirBack){
+                if(index == dirBack.length){
+                    break;
+                }
+                else{
+                    newDir+=`${dirBack[index]}/`
+                }
+            }
+            newDir = newDir.substring(0,newDir.length-1);
+            let renderFiles = HostViewFunction.renderFilesAndDir;
+            this.commandExec(`ls ${newDir}`,renderFiles);
+            this._currentDir = newDir;
+
+        }
+    }
 }

@@ -38,7 +38,6 @@ class HostView{
     }
 
     static renderFilesAndDir(content){
-        console.log("RENDER")
         const elements = content.split('\n');
 
         let divBoxFiles = document.querySelector('#list-items');
@@ -76,7 +75,5 @@ class HostView{
 
     }
 
-    static teste(out){
-        console.log(out);
-    }
+ 
 }
