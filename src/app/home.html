@@ -154,14 +154,13 @@
                 Hosts
             </h1>
 
-            <div class="list-server">
+            <div class="list-server"> 
                 <div class="server-selected">
                     <i class="fas fa-power-off server-on" class="button-power"></i>
                     <span> DevCapivara</span>
                 </div>
 
-                <div class="all-server" >
-                    <button id="btn-refresh" style="display: none;">atualizar</button>
+                <div class="all-server">
                     <div id="all-hosts">
 
                     </div>
@@ -176,28 +175,20 @@
     </div>
     
 
-    <script>
-        $(function () {
-            $("#file-box").resizable();
-            $("#process-box").resizable();
-            $("#instances-box").resizable();
-        });
-    </script>
 
-
+    <!-- Block Scripts -->
     <script src="../services/chart/chart.js"></script>
+    <script src="../services/resize.js"></script>
     <script src="./controllers/HostController.js"></script>
     <script src="./views/HostView.js"></script>
     <script src="./controllers/SshController.js"></script>
     
 
-    <!-- For connections -->
+    <!--  connections -->
     <script>
         const connection = new SshController('192.168.0.103' , 'marcos' , 'hardcorework');
         connection.initMonitor();
     </script>
-
-
 
     <!-- For hosts -->
     <script>
