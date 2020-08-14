@@ -38,6 +38,7 @@ class HostView{
     }
 
     static renderFilesAndDir(content){
+        console.log("RENDER")
         const elements = content.split('\n');
 
         let divBoxFiles = document.querySelector('#list-items');
@@ -57,7 +58,7 @@ class HostView{
                 }else{
                     icon.className = "fas fa-folder-open folder-color";
                     icon.id = `/${elements[index]}`;
-                    icon.setAttribute('onclick', 'connection.nextDir(this.id)');
+                    icon.setAttribute('onclick', 'connection.changeDir(this.id)');
                 }
                 
                 let textContent = document.createElement('label');

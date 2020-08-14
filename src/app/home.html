@@ -186,10 +186,16 @@
     <script src="./views/HostView.js"></script>
     <script src="./controllers/SshController.js"></script>
     
+
+    <!-- For connections -->
     <script>
-        const connection = new SshController('168.235.110.16' , 'devcapivara' , 'dev@556637');
+        const connection = new SshController('192.168.0.103' , 'marcos' , 'hardcorework');
         connection.initMonitor();
     </script>
+
+
+
+    <!-- For hosts -->
     <script>
         const { ipcRenderer } = require('electron');
 
@@ -205,13 +211,14 @@
             HostView.renderHosts('all-hosts');
         })
 
-    </script>
 
-    <script>
         function removeHost(host){
             hostFunction.deleteOne(host.id);
             document.getElementById(`box-host-${host.id}`).style = "display:none";
         }
+
+
     </script>
+
 </body>
 </html>

@@ -18,10 +18,15 @@ class SshController{
         });
     }
 
-    commandExec(command,functionExecute, currentDir=null){
+    commandExec(command,functionExecute){
+        let countControl = 0;
         this.connection.exec(command, {
             out: function(stdout) {
-                functionExecute(stdout, currentDir);
+                if(countControl<1){
+                    functionExecute(stdout);
+                }
+
+                countControl++;
             }
         }).start();
     }
@@ -31,11 +36,9 @@ class SshController{
         this.commandExec('ls' , renderFiles);
     }
 
-    nextDir(path){
+    changeDir(path){
         let renderFiles = HostViewFunction.renderFilesAndDir;
         this.commandExec(`ls ${this._currentDir}${path}`,renderFiles);
-        console.log(this._currentDir);
         this._currentDir += path;
-        console.log(this._currentDir);
     }
 }
