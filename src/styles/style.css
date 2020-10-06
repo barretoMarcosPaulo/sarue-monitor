@@ -266,3 +266,12 @@ body{
     outline: none;
     font-size: 15px;
 }
+
+#icon-back{
+    padding: 5px;
+    margin-top: 1%; 
+    display: block; 
+    margin-left: 1%; 
+    color: #979497; 
+    cursor: pointer
+}
