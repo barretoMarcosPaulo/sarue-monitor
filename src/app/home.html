@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/jquery/jquery-ui.css">
     <link rel="stylesheet" href="../styles/fontawesome-free-5.13.0/css/all.min.css">
-    <!-- <script>const $ = require('jquery');</script> -->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script crossorigin="anonymous" src="../services/jquery/jquery-ui.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
@@ -30,20 +29,13 @@
                     </div>
                 </div>
             </div>
+            <label style=" margin-top: 1%; display: block; margin-left: 1%; color: #979497; cursor: pointer" onclick="connection.backDir()">
+                <i class="fas fa-chevron-left"></i>
+                Anterior
+            </label>
 
-            <div class="list-files">
+            <div class="list-files" id="list-items">
 
-                
-                <div class="item">
-                    <i class="fas fa-folder-open"  style="color: #9b90ff;"></i>
-                    <label>Documentos</label>
-                </div>
-                
-                
-                <div class="item">
-                    <i class="fas fa-file" style="color: #FFE9A2;"></i> 
-                    <label>electron.js</label>
-                </div>
                 
             </div>
         </div>
@@ -159,116 +151,69 @@
         
         <div class="instances box" id="instances-box">
             <h2>
-                Servidores
+                Hosts
             </h1>
 
-            <div class="list-server">
+            <div class="list-server"> 
                 <div class="server-selected">
                     <i class="fas fa-power-off server-on" class="button-power"></i>
                     <span> DevCapivara</span>
                 </div>
 
                 <div class="all-server">
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 1</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
+                    <div id="all-hosts">
 
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 2</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
                     </div>
-
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 3</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 4, muito importante</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-
-
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 1</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 2</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-                    
-                    <div class="server-stored">
-                        <i class="fas fa-plug button-power"></i>
-                        <span> Servidor 3</span>
-                        <i class="fas fa-trash-alt btn-del"></i>
-                    </div>
-
-
                 </div>
             </div>
 
-            <button type="button" class="button-add-server">
-                Novo Servidor
+            <button type="button" class="button-add-server" id="button-add-server">
+                Novo Host
             </button>
         </div>
         
     </div>
     
 
+
+    <!-- Block Scripts -->
+    <script src="../services/chart/chart.js"></script>
+    <script src="../services/resize.js"></script>
+    <script src="./controllers/HostController.js"></script>
+    <script src="./views/HostView.js"></script>
+    <script src="./controllers/SshController.js"></script>
+    
+
+    <!--  connections -->
     <script>
-        $(function () {
-            $("#file-box").resizable();
-            $("#process-box").resizable();
-            $("#instances-box").resizable();
-        });
+        const connection = new SshController('192.168.0.103' , 'marcos' , 'hardcorework');
+        connection.initMonitor();
     </script>
 
-
+    <!-- For hosts -->
     <script>
+        const { ipcRenderer } = require('electron');
+
+        document.querySelector('#button-add-server').addEventListener('click',()=>{
+            ipcRenderer.send('window-form-instance');
+        })
+
+        HostView.renderHosts('all-hosts');
+
+        ipcRenderer.on("refresh-hosts-list",()=>{
+            alert("Novo host adicionado com sucesso");
+            document.getElementById('all-hosts').innerHTML=" ";
+            HostView.renderHosts('all-hosts');
+        })
 
 
-        new Chart(document.getElementById("chart"), {
-            type: 'bar',
-            data: {
-                // labels: ["1900", "1950", "1999"],
-                datasets: [
-                    
-                    {
-                        label: "CPU(%)",
-                        backgroundColor: "#f14666",
-                        data: [90]
-                    }, 
-                    
-                    {
-                        label: "Mémoria(%)",
-                        backgroundColor: "#FFC154",
-                        data: [33]
-                    },
+        function removeHost(host){
+            hostFunction.deleteOne(host.id);
+            document.getElementById(`box-host-${host.id}`).style = "display:none";
+        }
 
-                    {
-                        label: "Disco(%)",
-                        backgroundColor: "#47B39C",
-                        data: [45]
-                    },
-                ]
-            },
-            options: {
-                title: {
-                    display: true,
-                    text: 'Em uso neste servidor:',
-                    position: 'bottom'
-                }
-            }
-        });
+
     </script>
+
 </body>
 </html>

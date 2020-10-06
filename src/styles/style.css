@@ -4,6 +4,14 @@
     margin: 0;
     padding: 0;
 }
+
+.file-color{
+    color: #FFE9A2;
+}
+.folder-color{
+    color: #9b90ff;
+}
+
 a{
     text-decoration: none;
 }
@@ -36,7 +44,8 @@ body{
     min-height:100vh;
 }
 .files{
-    min-width: 25%;
+    min-width: 20%;
+    max-width: 25%;
 }
 .process{
     width: 50%;
@@ -71,11 +80,14 @@ body{
     overflow: auto;
     display: flex;
     flex-direction: column;
-    max-height: 100vh;
+    height: 70vh;
     margin-top: 5%;
+    flex: 1;
 }
 
 .list-files .item{
+    min-width: 200px;
+    max-width: 90%;
     font-size: 15px;
     cursor: pointer;
     padding: 8px;   
@@ -83,8 +95,11 @@ body{
 .list-files .item label,i{
     font-weight: bold;
     cursor: pointer;
+    word-break: break-all;
 }
-
+.list-files .item i{
+    margin-right: 10px;
+}
 
 .header-process h2{
     margin-top: 10px;
@@ -182,11 +197,13 @@ body{
 
 /* Servers */
 
+
 .instances h2{
     text-align: center;
     margin: 10px 0 0 10px;
 }
 .server-selected{
+    width: 100%;
     display: flex;
     align-items: center;
     margin-top: 10%;
@@ -235,9 +252,6 @@ body{
     max-width: 75%;
 }
 
-.button-power{
-    /* color: rgb(68, 68, 226); */
-}
 
 .button-add-server{
     border-color: #fa3939;
