@@ -29,7 +29,7 @@
                     </div>
                 </div>
             </div>
-            <label style=" margin-top: 1%; display: block; margin-left: 1%; color: #979497; cursor: pointer" onclick="connection.backDir()">
+            <label style="display: none;"  id="icon-back" onclick="connection.backDir()">
                 <i class="fas fa-chevron-left"></i>
                 Anterior
             </label>
@@ -186,7 +186,7 @@
 
     <!--  connections -->
     <script>
-        const connection = new SshController('192.168.0.103' , 'marcos' , 'hardcorework');
+        const connection = new SshController('www.devcapivara.com.br' , 'devcapivara' , 'dev@556637');
         connection.initMonitor();
     </script>
 
