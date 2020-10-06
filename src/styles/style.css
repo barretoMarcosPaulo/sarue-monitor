@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
 
 *{
     margin: 0;
@@ -23,7 +23,7 @@ body{
     background-color: #222328;
     color: white;
     overflow: hidden;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .bg-gray{
@@ -49,9 +49,11 @@ body{
 }
 .process{
     width: 50%;
+    min-width: 50%;
 }
 .instances{
-    width: 25%;
+    min-width: 30%;
+    max-width: 30%;
 }
 
 
@@ -247,7 +249,6 @@ body{
 }
 .server-stored span{
     margin-left: 11px;
-    /* border-right: solid 1px white; */
     min-width: 75%;
     max-width: 75%;
 }
@@ -258,7 +259,7 @@ body{
     cursor: pointer;
     background-color: #fa3939;
     color: white;
-    margin: 18% auto;
+    margin: 10% auto;
     display: block;
     width: 80%;
     height: 8vh;
