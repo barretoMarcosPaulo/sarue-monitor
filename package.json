@@ -10,7 +10,7 @@
   "author": "Marcos Paulo and Lucas Bezerra",
   "license": "ISC",
   "dependencies": {
-    "chart.js": "^2.9.3",
+    "chart.js": "^2.9.4",
     "electron-store": "^5.2.0",
     "jquery": "^3.5.1",
     "jquery-ui-dist": "^1.12.1",
